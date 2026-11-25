@@ -1,0 +1,113 @@
+{
+  "final_overall_status": "PASS",
+  "checks_passed": 18,
+  "checks_total": 18,
+  "checks": [
+    {
+      "check": "1_required_file_inventory",
+      "status": "PASS",
+      "detail": "All required files present"
+    },
+    {
+      "check": "2_csv_row_counts_and_schemas",
+      "status": "PASS",
+      "detail": "All 8 CSV schemas and row counts match"
+    },
+    {
+      "check": "3_duplicate_primary_ids",
+      "status": "PASS",
+      "detail": "All primary keys unique"
+    },
+    {
+      "check": "4_foreign_key_integrity",
+      "status": "PASS",
+      "detail": "All foreign keys resolve"
+    },
+    {
+      "check": "5_date_ranges_and_formats",
+      "status": "PASS",
+      "detail": "All dates valid ISO and in range"
+    },
+    {
+      "check": "6_gst_arithmetic_and_totals",
+      "status": "PASS",
+      "detail": "All 25 invoices have exact GST arithmetic"
+    },
+    {
+      "check": "7_invoice_to_po_discrepancies",
+      "status": "PASS",
+      "detail": "Found expected mismatch: ['INV-2025-018']"
+    },
+    {
+      "check": "8_duplicate_invoice_numbers",
+      "status": "PASS",
+      "detail": "Found expected duplicate invoice_number: ['SVE/25-26/0147']"
+    },
+    {
+      "check": "9_payment_reconciliation",
+      "status": "PASS",
+      "detail": "Overpaid=[], Partials=['PAY-015']"
+    },
+    {
+      "check": "10_delivery_delay_records",
+      "status": "PASS",
+      "detail": "Delayed deliveries: ['DEL-003', 'DEL-008']"
+    },
+    {
+      "check": "11_quality_failures",
+      "status": "PASS",
+      "detail": "High-defect quality reports: ['QR-010', 'QR-012']"
+    },
+    {
+      "check": "12_certificate_status_and_expiry",
+      "status": "PASS",
+      "detail": "SUP004 expired 2025-09-30; SUP002 valid 2027-03-31"
+    },
+    {
+      "check": "13_markdown_document_count",
+      "status": "PASS",
+      "detail": "Found 12 Markdown documents"
+    },
+    {
+      "check": "14_pdf_count_and_readable_text",
+      "status": "PASS",
+      "detail": "Found 5 text-selectable PDFs"
+    },
+    {
+      "check": "15_excel_worksheets_and_counts",
+      "status": "PASS",
+      "detail": "All 8 Excel sheets match CSV row counts"
+    },
+    {
+      "check": "16_evaluation_scenario_count",
+      "status": "PASS",
+      "detail": "Found 10 decision scenarios"
+    },
+    {
+      "check": "17_ground_truth_references",
+      "status": "PASS",
+      "detail": "All 12 ground-truth references resolve"
+    },
+    {
+      "check": "18_all_planted_anomalies_discoverable",
+      "status": "PASS",
+      "detail": "Discovered 12/12 planted anomalies"
+    }
+  ],
+  "expected_anomalies_found": [
+    "ANM-03 (INV-2025-018)",
+    "ANM-04 (SVE/25-26/0147)",
+    "ANM-12 (PAY-015)",
+    "ANM-01 (DEL-003)",
+    "ANM-02 (DEL-008)",
+    "ANM-05 (QR-010)",
+    "ANM-06 (QR-012)",
+    "ANM-07 (DOC-PDF-001)",
+    "ANM-08 (DOC-MD-003 vs DOC-MD-006)",
+    "ANM-09 (DOC-MD-012 vs deliveries)",
+    "ANM-10 (DOC-MD-007 vs deliveries)",
+    "ANM-11 (PO-2025-023)"
+  ],
+  "unexpected_errors_found": [],
+  "warnings": []
+}

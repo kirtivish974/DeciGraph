@@ -1,0 +1,110 @@
+=================================================================
+DECISIONGRAPH DOCUMENT CONTENT AUDIT
+=================================================================
+
+========== MARKDOWN DOCUMENTS ==========
+
+FILE: documents/contracts/contract_SUP001_CON-2025-001.md
+Characters: 787
+Lines: 19
+Headings: ['# Supplier Master Agreement — Kaveri ElectroMech Works Pvt Ltd', '## Key Commercial Terms', '## Special Provisions']
+[PASS] Document contains text
+
+FILE: documents/contracts/contract_SUP002_CON-2025-002.md
+Characters: 764
+Lines: 19
+Headings: ['# Supplier Master Agreement — Vindhya Precision Controls Ltd', '## Key Commercial Terms', '## Special Provisions']
+[PASS] Document contains text
+
+FILE: documents/contracts/contract_SUP003_CON-2025-003.md
+Characters: 841
+Lines: 19
+Headings: ['# Supplier Master Agreement — Sahyadri Power Components Pvt Ltd', '## Key Commercial Terms', '## Special Provisions']
+[PASS] Document contains text
+
+FILE: documents/contracts/contract_SUP004_CON-2025-004.md
+Characters: 893
+Lines: 19
+Headings: ['# Supplier Master Agreement — Deccan Industrial Insulators LLP', '## Key Commercial Terms', '## Special Provisions']
+[PASS] Document contains text
+
+FILE: documents/contracts/contract_SUP005_CON-2025-005.md
+Characters: 820
+Lines: 19
+Headings: ['# Supplier Master Agreement — Suryodaya VoltEdge Enterprises', '## Key Commercial Terms', '## Special Provisions']
+[PASS] Document contains text
+
+FILE: documents/emails/email_SUP003_pricing_revision.md
+Characters: 697
+Lines: 17
+Headings: ['# Email: Revised Pricing for PRD004 Control Cable']
+[PASS] Document contains text
+
+FILE: documents/emails/email_SUP001_performance_claim.md
+Characters: 731
+Lines: 17
+Headings: ['# Email: FY 2025-26 Delivery Performance Summary']
+[PASS] Document contains text
+
+FILE: documents/emails/email_SUP005_invoice_clarification.md
+Characters: 803
+Lines: 18
+Headings: ['# Email: Clarification on PO-2025-018 and PO-2025-023 Billing']
+[PASS] Document contains text
+
+FILE: documents/quality/quality_report_SUP005_QR-010.md
+Characters: 628
+Lines: 18
+Headings: ['# Receiving Quality Inspection Report — QR-010', '## Inspection Findings']
+[PASS] Document contains text
+
+FILE: documents/quality/quality_report_SUP001_QR-012.md
+Characters: 702
+Lines: 18
+Headings: ['# Receiving Quality Inspection Report — QR-012', '## Inspection Findings']
+[PASS] Document contains text
+
+FILE: documents/management/management_report_Q3_procurement_review.md
+Characters: 749
+Lines: 12
+Headings: ['# Q3 FY25-26 Procurement & Payables Exception Review', '## Key Exceptions Noted']
+[PASS] Document contains text
+
+FILE: documents/management/management_report_H1_supplier_reliability.md
+Characters: 683
+Lines: 12
+Headings: ['# H1 FY25-26 Supplier Delivery Reliability Briefing', '## H1 Summary']
+[PASS] Document contains text
+
+========== PDF DOCUMENTS ==========
+
+FILE: documents/pdf/cert_SUP004_iso9001.pdf
+Pages: 1
+Extracted characters: 582
+[PASS] Text extraction successful
+
+FILE: documents/pdf/cert_SUP002_iso9001.pdf
+Pages: 1
+Extracted characters: 499
+[PASS] Text extraction successful
+
+FILE: documents/pdf/scar_SUP005_corrective_action.pdf
+Pages: 1
+Extracted characters: 832
+[PASS] Text extraction successful
+
+FILE: documents/pdf/policy_asteron_procurement_2025.pdf
+Pages: 1
+Extracted characters: 794
+[PASS] Text extraction successful
+
+FILE: documents/pdf/review_annual_supplier_performance_fy25_26.pdf
+Pages: 1
+Extracted characters: 952
+[PASS] Text extraction successful
+
+========== AUDIT SUMMARY ==========
+Markdown documents: 12
+PDF documents: 5
+
+Document audit completed.

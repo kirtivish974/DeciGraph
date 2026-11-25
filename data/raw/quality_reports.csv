@@ -1,0 +1,16 @@
+qr_id,supplier_id,po_id,product_id,inspection_date,batch_size,defects_found,defect_rate,inspection_result,inspector,remarks
+QR-001,SUP001,PO-2025-001,PRD001,2025-04-22,50,1,0.02,Pass,R. Deshpande,Minor surface scratch on 1 unit; accepted.
+QR-002,SUP002,PO-2025-002,PRD008,2025-04-26,80,0,0.0,Pass,R. Deshpande,Zero defects; full conformance to spec.
+QR-003,SUP003,PO-2025-004,PRD004,2025-05-26,100,1,0.01,Pass,M. Nair,Insulation thickness within tolerance.
+QR-004,SUP004,PO-2025-005,PRD005,2025-06-02,120,1,0.0083,Pass,M. Nair,Dielectric test passed.
+QR-005,SUP002,PO-2025-006,PRD002,2025-06-15,500,0,0.0,Pass,R. Deshpande,Zero defects observed in sampling.
+QR-006,SUP003,PO-2025-007,PRD001,2025-07-02,60,1,0.0167,Pass,M. Nair,Dimensions and conductivity verified.
+QR-007,SUP002,PO-2025-011,PRD006,2025-08-30,45,0,0.0,Pass,R. Deshpande,Calibration and RS485 output verified.
+QR-008,SUP003,PO-2025-012,PRD003,2025-09-16,35,0,0.0,Pass,M. Nair,Trip curve test passed on all units.
+QR-009,SUP001,PO-2025-014,PRD004,2025-11-05,80,4,0.05,Conditional,R. Deshpande,Armouring uniformity issue on 4m; sorted and accepted.
+QR-010,SUP005,PO-2025-018,PRD006,2025-12-22,50,7,0.14,Fail,R. Deshpande,ANM-05: 7/50 meters failed calibration & display check (14% defect rate).
+QR-011,SUP002,PO-2025-016,PRD008,2025-11-30,100,0,0.0,Pass,M. Nair,Zero defects; switching endurance verified.
+QR-012,SUP001,PO-2025-021,PRD003,2026-02-04,100,9,0.09,Conditional,R. Deshpande,ANM-06: 9% defect rate on MCCB lot; second SUP001 quality issue in 2 months.
+QR-013,SUP004,PO-2025-017,PRD005,2025-12-10,150,2,0.0133,Pass,M. Nair,Within 2% AQL threshold.
+QR-014,SUP002,PO-2025-020,PRD003,2026-01-20,30,0,0.0,Pass,R. Deshpande,Zero defects; 100% conformance.
+QR-015,SUP005,PO-2025-022,PRD001,2026-02-18,45,1,0.0222,Pass,M. Nair,Minor burr on 1 bar; reworked at receiving.

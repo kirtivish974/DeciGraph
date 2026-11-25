@@ -1,0 +1,6 @@
+supplier_id,supplier_name,contact_person,email,phone,address,city,state,gstin,registration_date,supplier_category,risk_rating,status
+SUP001,Kaveri ElectroMech Works Pvt Ltd,Rajesh Kulkarni,rajesh.kulkarni@kaverielectromech.in,+91-9823011401,"Plot 14, Bhosari MIDC Industrial Area, Sector 7",Pune,Maharashtra,27AABCK4128M1Z5,2021-06-15,Switchgear & Busbars,High,Active
+SUP002,Vindhya Precision Controls Ltd,Meera Deshmukh,meera.deshmukh@vindhyacontrols.in,+91-9820455812,"Unit 8, Mahape Electronic Zone, TTC Industrial Area",Navi Mumbai,Maharashtra,27AAACV8831N1Z2,2019-11-04,Automation & Relays,Low,Active
+SUP003,Sahyadri Power Components Pvt Ltd,Anil Joshi,anil.joshi@sahyadripower.in,+91-9881234907,"Shed 22, Chakan MIDC Phase II",Pune,Maharashtra,27AADCS3290P1Z8,2020-08-22,Cables & Transformers,Low,Active
+SUP004,Deccan Industrial Insulators LLP,Prakash Nair,prakash.nair@deccaninsulators.in,+91-9765402198,"Survey 45/2, Jeedimetla Industrial Estate",Hyderabad,Telangana,36AABCD6714R1Z9,2022-02-10,Insulators & Enclosures,Medium,Active
+SUP005,Suryodaya VoltEdge Enterprises,Vikram Patwardhan,vikram.p@suryodayavoltedge.in,+91-9890177364,"Gala 5, Satpur MIDC Industrial Area",Nashik,Maharashtra,27AAECS9502K1Z1,2023-01-19,Circuit Protection & Meters,High,Under Review

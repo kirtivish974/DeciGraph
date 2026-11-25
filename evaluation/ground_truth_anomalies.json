@@ -1,0 +1,187 @@
+[
+  {
+    "anomaly_id": "ANM-01",
+    "anomaly_type": "delivery_delay",
+    "supplier_id": "SUP001",
+    "source_file": "data/raw/supplier_deliveries.csv",
+    "source_record_id": "DEL-003",
+    "related_record_ids": [
+      "PO-2025-003",
+      "CON-2025-001"
+    ],
+    "explanation": "DEL-003 arrived 18 days after expected_delivery_date.",
+    "expected_detection_method": "Compare actual_delivery_date vs expected_delivery_date / delay_days > 0.",
+    "severity": "High"
+  },
+  {
+    "anomaly_id": "ANM-02",
+    "anomaly_type": "delivery_delay_and_shortage",
+    "supplier_id": "SUP001",
+    "source_file": "data/raw/supplier_deliveries.csv",
+    "source_record_id": "DEL-008",
+    "related_record_ids": [
+      "PO-2025-008"
+    ],
+    "explanation": "DEL-008 arrived 12 days late and delivered 340 of 400 ordered units (Partial).",
+    "expected_detection_method": "Check delay_days > 0 and quantity_delivered < quantity_ordered.",
+    "severity": "High"
+  },
+  {
+    "anomaly_id": "ANM-03",
+    "anomaly_type": "invoice_po_mismatch",
+    "supplier_id": "SUP005",
+    "source_file": "data/raw/invoices.csv",
+    "source_record_id": "INV-2025-018",
+    "related_record_ids": [
+      "PO-2025-018",
+      "DOC-MD-008",
+      "DOC-PDF-003"
+    ],
+    "explanation": "INV-2025-018 taxable_amount (181,500.00) is INR 24,000.00 higher than PO-2025-018 total_amount (157,500.00), with GST recalculated at 18%.",
+    "expected_detection_method": "Three-way match comparing invoices.taxable_amount against purchase_orders.total_amount.",
+    "severity": "Critical"
+  },
+  {
+    "anomaly_id": "ANM-04",
+    "anomaly_type": "duplicate_invoice_number",
+    "supplier_id": "SUP005",
+    "source_file": "data/raw/invoices.csv",
+    "source_record_id": "INV-2025-022",
+    "related_record_ids": [
+      "INV-2025-019",
+      "PO-2025-019",
+      "PO-2025-022",
+      "DOC-MD-011"
+    ],
+    "explanation": "Supplier invoice number SVE/25-26/0147 is duplicated across INV-2025-019 and INV-2025-022.",
+    "expected_detection_method": "Group invoices by (supplier_id, invoice_number) and flag count > 1.",
+    "severity": "Critical"
+  },
+  {
+    "anomaly_id": "ANM-05",
+    "anomaly_type": "quality_failure",
+    "supplier_id": "SUP005",
+    "source_file": "data/raw/quality_reports.csv",
+    "source_record_id": "QR-010",
+    "related_record_ids": [
+      "PO-2025-018",
+      "PRD006",
+      "DOC-MD-009",
+      "DOC-PDF-003"
+    ],
+    "explanation": "QR-010 failed inspection with 7/50 defective units (defect_rate = 0.14).",
+    "expected_detection_method": "Filter quality_reports for inspection_result == 'Fail' or defect_rate > 0.05.",
+    "severity": "Critical"
+  },
+  {
+    "anomaly_id": "ANM-06",
+    "anomaly_type": "repeat_quality_failure",
+    "supplier_id": "SUP001",
+    "source_file": "data/raw/quality_reports.csv",
+    "source_record_id": "QR-012",
+    "related_record_ids": [
+      "QR-009",
+      "PO-2025-021",
+      "PRD003",
+      "DOC-MD-010"
+    ],
+    "explanation": "QR-012 recorded 9% defect rate (Conditional), marking SUP001's second quality issue within two months.",
+    "expected_detection_method": "Track rolling quality_reports defect_rate > 0.05 per supplier.",
+    "severity": "High"
+  },
+  {
+    "anomaly_id": "ANM-07",
+    "anomaly_type": "expired_compliance_certificate",
+    "supplier_id": "SUP004",
+    "source_file": "documents/pdf/cert_SUP004_iso9001.pdf",
+    "source_record_id": "DOC-PDF-001",
+    "related_record_ids": [
+      "DOC-MD-004",
+      "CON-2025-004",
+      "PO-2025-013",
+      "PO-2025-017"
+    ],
+    "explanation": "SUP004 ISO 9001 certificate expired on 2025-09-30 while DOC-MD-004 claims active coverage and POs were placed in Oct-Nov 2025.",
+    "expected_detection_method": "Extract certificate expiry_date from PDF and compare against PO order_dates and contract claims.",
+    "severity": "High"
+  },
+  {
+    "anomaly_id": "ANM-08",
+    "anomaly_type": "contract_email_contradiction",
+    "supplier_id": "SUP003",
+    "source_file": "documents/emails/email_SUP003_pricing_revision.md",
+    "source_record_id": "DOC-MD-006",
+    "related_record_ids": [
+      "DOC-MD-003",
+      "CON-2025-003",
+      "PO-2025-004",
+      "PRD004"
+    ],
+    "explanation": "Email DOC-MD-006 quotes PRD004 at INR 2,100/m, contradicting contracted INR 1,850/m in DOC-MD-003 without a signed addendum.",
+    "expected_detection_method": "Cross-check quoted unit prices in emails against contract markdown and PO prices.",
+    "severity": "Medium"
+  },
+  {
+    "anomaly_id": "ANM-09",
+    "anomaly_type": "report_data_contradiction",
+    "supplier_id": "SUP002",
+    "source_file": "documents/management/management_report_H1_supplier_reliability.md",
+    "source_record_id": "DOC-MD-012",
+    "related_record_ids": [
+      "DEL-002",
+      "DEL-006",
+      "DEL-011"
+    ],
+    "explanation": "Management report DOC-MD-012 claims SUP002 had 1 late delivery in H1, whereas supplier_deliveries.csv shows 0 late deliveries for SUP002.",
+    "expected_detection_method": "Verify narrative OTD claims in management reports against supplier_deliveries.csv.",
+    "severity": "Low"
+  },
+  {
+    "anomaly_id": "ANM-10",
+    "anomaly_type": "performance_claim_contradiction",
+    "supplier_id": "SUP001",
+    "source_file": "documents/emails/email_SUP001_performance_claim.md",
+    "source_record_id": "DOC-MD-007",
+    "related_record_ids": [
+      "DEL-001",
+      "DEL-003",
+      "DEL-008",
+      "DEL-014",
+      "DEL-021"
+    ],
+    "explanation": "SUP001 email DOC-MD-007 claims 95% OTD, but actual delivery records show 3/5 on-time (60% OTD).",
+    "expected_detection_method": "Compute actual OTD% from supplier_deliveries.csv and compare to supplier email claims.",
+    "severity": "High"
+  },
+  {
+    "anomaly_id": "ANM-11",
+    "anomaly_type": "unapproved_price_increase",
+    "supplier_id": "SUP005",
+    "source_file": "data/raw/purchase_orders.csv",
+    "source_record_id": "PO-2025-023",
+    "related_record_ids": [
+      "PRD007",
+      "CON-2025-005",
+      "DOC-MD-005",
+      "DOC-MD-008"
+    ],
+    "explanation": "PO-2025-023 bills PRD007 at INR 3,400.00 vs. standard INR 2,800.00 (+21.4%) with approved_by='Pending Buyer Sign-Off'.",
+    "expected_detection_method": "Compare PO unit_price against products.standard_unit_price (>5% increase) and check approved_by.",
+    "severity": "High"
+  },
+  {
+    "anomaly_id": "ANM-12",
+    "anomaly_type": "partial_payment",
+    "supplier_id": "SUP003",
+    "source_file": "data/raw/payments.csv",
+    "source_record_id": "PAY-015",
+    "related_record_ids": [
+      "INV-2025-015",
+      "PO-2025-015",
+      "DOC-MD-011"
+    ],
+    "explanation": "PAY-015 paid INR 198,000.00 against INV-2025-015 total INR 236,000.00 (INR 38,000.00 shortfall).",
+    "expected_detection_method": "Reconcile payments.payment_amount against invoices.total_amount and payment_status.",
+    "severity": "Medium"
+  }
+]

@@ -1,0 +1,31 @@
+
+# Python virtual environments
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak

@@ -1,0 +1,6 @@
+contract_id,supplier_id,contract_start_date,contract_end_date,contract_value,payment_terms,delivery_terms,penalty_clause,auto_renewal,status
+CON-2025-001,SUP001,2025-04-01,2026-03-31,1800000.0,Net 30,DAP Pune Plant; max 14-day lead time,"1.0% of PO value per week of delay, capped at 5%",False,Active
+CON-2025-002,SUP002,2025-04-01,2026-03-31,2400000.0,Net 45,DAP Pune Plant; max 10-day lead time,0.5% per week of delay beyond grace period of 2 days,True,Active
+CON-2025-003,SUP003,2025-04-01,2026-03-31,2000000.0,Net 30,DAP Pune Plant; max 12-day lead time,0.75% per week of delay; fixed unit prices for 12 months,True,Active
+CON-2025-004,SUP004,2025-04-01,2026-03-31,1500000.0,Net 30,DAP Pune Plant; valid ISO 9001 mandatory throughout term,Immediate PO hold if compliance certificates lapse,False,Active
+CON-2025-005,SUP005,2025-04-01,2026-03-31,1600000.0,Net 30,DAP Pune Plant; max 14-day lead time,Unit-price increases >5% prohibited without written buyer sign-off,False,Active

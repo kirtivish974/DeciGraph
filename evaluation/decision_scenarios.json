@@ -1,0 +1,130 @@
+[
+  {
+    "scenario_id": "SCN-01",
+    "category": "Overall supplier selection",
+    "question": "Which supplier should Asteron Industrial Systems select for our next procurement contract, and why?",
+    "expected_recommendation": "SUP003 (Sahyadri Power Components Pvt Ltd) for balanced cost, 100% OTD, and low defects, or SUP002 (Vindhya Precision Controls Ltd) if zero-defect reliability outweighs higher pricing; exclude SUP001, SUP004 (until ISO 9001 renewed), and SUP005.",
+    "key_evidence_ids": [
+      "SUP002",
+      "SUP003",
+      "SUP001",
+      "SUP004",
+      "SUP005",
+      "DOC-PDF-005"
+    ]
+  },
+  {
+    "scenario_id": "SCN-02",
+    "category": "Delivery performance",
+    "question": "Which suppliers experienced delivery delays or short shipments during FY 2025-26?",
+    "expected_recommendation": "Flag SUP001 for DEL-003 (18 days late on PO-2025-003) and DEL-008 (12 days late and 60-unit short shipment on PO-2025-008).",
+    "key_evidence_ids": [
+      "DEL-003",
+      "PO-2025-003",
+      "DEL-008",
+      "PO-2025-008"
+    ]
+  },
+  {
+    "scenario_id": "SCN-03",
+    "category": "Invoice reconciliation",
+    "question": "Are there any invoices whose taxable amount does not match the corresponding purchase order?",
+    "expected_recommendation": "INV-2025-018 (SUP005) billed INR 181,500.00 taxable vs. PO-2025-018 total_amount INR 157,500.00 (+INR 24,000.00 overbilling), with GST recalculated accurately on the inflated base.",
+    "key_evidence_ids": [
+      "INV-2025-018",
+      "PO-2025-018",
+      "DOC-MD-008",
+      "DOC-PDF-003"
+    ]
+  },
+  {
+    "scenario_id": "SCN-04",
+    "category": "Duplicate invoices",
+    "question": "Has any supplier submitted a duplicate supplier invoice number across different records?",
+    "expected_recommendation": "SUP005 reused supplier invoice number SVE/25-26/0147 on both INV-2025-019 (PO-2025-019) and INV-2025-022 (PO-2025-022).",
+    "key_evidence_ids": [
+      "INV-2025-019",
+      "INV-2025-022",
+      "DOC-MD-011",
+      "DOC-PDF-003"
+    ]
+  },
+  {
+    "scenario_id": "SCN-05",
+    "category": "Quality risks",
+    "question": "Which suppliers pose quality risks based on receiving inspection defect rates?",
+    "expected_recommendation": "SUP005 failed QR-010 (14% defect rate on PO-2025-018 / PRD006) and SUP001 had repeat quality issues on QR-009 and QR-012 (9% defect rate, Conditional on PO-2025-021 / PRD003).",
+    "key_evidence_ids": [
+      "QR-010",
+      "QR-012",
+      "QR-009",
+      "DOC-MD-009",
+      "DOC-MD-010"
+    ]
+  },
+  {
+    "scenario_id": "SCN-06",
+    "category": "Compliance gaps",
+    "question": "Do all active suppliers hold valid mandatory ISO 9001 certification for the POs placed in Q3-Q4?",
+    "expected_recommendation": "No. SUP004's ISO 9001 certificate (DOC-PDF-001) expired on 2025-09-30, yet PO-2025-013 (2025-10-10) and PO-2025-017 (2025-11-27) were placed despite DOC-MD-004 requiring valid ISO 9001.",
+    "key_evidence_ids": [
+      "DOC-PDF-001",
+      "DOC-MD-004",
+      "CON-2025-004",
+      "PO-2025-013",
+      "PO-2025-017"
+    ]
+  },
+  {
+    "scenario_id": "SCN-07",
+    "category": "Contract/email contradictions",
+    "question": "Are there contradictions between signed supplier contracts, emails, or internal management reports?",
+    "expected_recommendation": "Yes: (1) DOC-MD-003 contracts PRD004 at INR 1,850 while email DOC-MD-006 quotes INR 2,100 without an addendum; (2) DOC-MD-012 claims SUP002 had 1 late H1 delivery while supplier_deliveries.csv shows 0.",
+    "key_evidence_ids": [
+      "DOC-MD-003",
+      "DOC-MD-006",
+      "DOC-MD-012",
+      "SUP002",
+      "SUP003"
+    ]
+  },
+  {
+    "scenario_id": "SCN-08",
+    "category": "Supplier performance claim verification",
+    "question": "Verify SUP001's email claim of 95% on-time delivery against actual delivery records.",
+    "expected_recommendation": "SUP001's claim in DOC-MD-007 (95% OTD) is contradicted by supplier_deliveries.csv, which shows 3 of 5 deliveries on time (60% OTD) due to DEL-003 and DEL-008.",
+    "key_evidence_ids": [
+      "DOC-MD-007",
+      "DEL-001",
+      "DEL-003",
+      "DEL-008",
+      "DEL-014",
+      "DEL-021"
+    ]
+  },
+  {
+    "scenario_id": "SCN-09",
+    "category": "Unapproved price increases",
+    "question": "Did any supplier charge a unit price significantly above the standard rate without documented buyer approval?",
+    "expected_recommendation": "On PO-2025-023 (SUP005, PRD007), unit_price jumped to INR 3,400.00 vs. standard INR 2,800.00 (+21.4%) with approved_by='Pending Buyer Sign-Off', violating CON-2025-005's 5% threshold.",
+    "key_evidence_ids": [
+      "PO-2025-023",
+      "PRD007",
+      "CON-2025-005",
+      "DOC-MD-005",
+      "DOC-MD-008"
+    ]
+  },
+  {
+    "scenario_id": "SCN-10",
+    "category": "What-if weight changes",
+    "question": "How does the top supplier recommendation change if decision weights shift from Cost-focused (50% price) to Risk/Quality-focused (60% quality + compliance + OTD)?",
+    "expected_recommendation": "Under Cost-focused weights, SUP003 ranks #1 (competitive pricing, 100% OTD). Under Risk/Quality-focused weights, SUP002 ranks #1 (0% defect rate, 100% OTD, valid ISO 9001 in DOC-PDF-002) despite higher pricing.",
+    "key_evidence_ids": [
+      "SUP002",
+      "SUP003",
+      "DOC-PDF-002",
+      "DOC-PDF-005"
+    ]
+  }
+]

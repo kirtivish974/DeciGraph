@@ -1,0 +1,216 @@
+{
+  "project": "DecisionGraph",
+  "company": "Asteron Industrial Systems Pvt Ltd",
+  "location": "Pune, Maharashtra, India",
+  "period": {
+    "start": "2025-04-01",
+    "end": "2026-03-31"
+  },
+  "currency": "INR",
+  "seed": 42,
+  "csv_files": {
+    "suppliers": {
+      "path": "data/raw/suppliers.csv",
+      "rows": 5,
+      "columns": [
+        "supplier_id",
+        "supplier_name",
+        "contact_person",
+        "email",
+        "phone",
+        "address",
+        "city",
+        "state",
+        "gstin",
+        "registration_date",
+        "supplier_category",
+        "risk_rating",
+        "status"
+      ]
+    },
+    "products": {
+      "path": "data/raw/products.csv",
+      "rows": 10,
+      "columns": [
+        "product_id",
+        "product_name",
+        "category",
+        "unit_of_measure",
+        "hsn_code",
+        "standard_unit_price",
+        "gst_rate",
+        "description"
+      ]
+    },
+    "purchase_orders": {
+      "path": "data/raw/purchase_orders.csv",
+      "rows": 25,
+      "columns": [
+        "po_id",
+        "supplier_id",
+        "product_id",
+        "order_date",
+        "expected_delivery_date",
+        "quantity",
+        "unit_price",
+        "total_amount",
+        "gst_amount",
+        "grand_total",
+        "status",
+        "approved_by"
+      ]
+    },
+    "supplier_deliveries": {
+      "path": "data/raw/supplier_deliveries.csv",
+      "rows": 25,
+      "columns": [
+        "delivery_id",
+        "po_id",
+        "supplier_id",
+        "expected_delivery_date",
+        "actual_delivery_date",
+        "quantity_ordered",
+        "quantity_delivered",
+        "delivery_status",
+        "delay_days",
+        "remarks"
+      ]
+    },
+    "invoices": {
+      "path": "data/raw/invoices.csv",
+      "rows": 25,
+      "columns": [
+        "invoice_id",
+        "invoice_number",
+        "po_id",
+        "supplier_id",
+        "invoice_date",
+        "taxable_amount",
+        "gst_rate",
+        "gst_amount",
+        "total_amount",
+        "due_date",
+        "payment_status",
+        "remarks"
+      ]
+    },
+    "payments": {
+      "path": "data/raw/payments.csv",
+      "rows": 25,
+      "columns": [
+        "payment_id",
+        "invoice_id",
+        "supplier_id",
+        "payment_date",
+        "payment_amount",
+        "payment_mode",
+        "reference_number",
+        "status"
+      ]
+    },
+    "contracts": {
+      "path": "data/raw/contracts.csv",
+      "rows": 5,
+      "columns": [
+        "contract_id",
+        "supplier_id",
+        "contract_start_date",
+        "contract_end_date",
+        "contract_value",
+        "payment_terms",
+        "delivery_terms",
+        "penalty_clause",
+        "auto_renewal",
+        "status"
+      ]
+    },
+    "quality_reports": {
+      "path": "data/raw/quality_reports.csv",
+      "rows": 15,
+      "columns": [
+        "qr_id",
+        "supplier_id",
+        "po_id",
+        "product_id",
+        "inspection_date",
+        "batch_size",
+        "defects_found",
+        "defect_rate",
+        "inspection_result",
+        "inspector",
+        "remarks"
+      ]
+    }
+  },
+  "excel_workbook": {
+    "path": "data/processed/procurement_data.xlsx",
+    "sheets": [
+      "suppliers",
+      "products",
+      "purchase_orders",
+      "supplier_deliveries",
+      "invoices",
+      "payments",
+      "contracts",
+      "quality_reports"
+    ]
+  },
+  "markdown_documents": [
+    "documents/contracts/contract_SUP001_CON-2025-001.md",
+    "documents/contracts/contract_SUP002_CON-2025-002.md",
+    "documents/contracts/contract_SUP003_CON-2025-003.md",
+    "documents/contracts/contract_SUP004_CON-2025-004.md",
+    "documents/contracts/contract_SUP005_CON-2025-005.md",
+    "documents/emails/email_SUP003_pricing_revision.md",
+    "documents/emails/email_SUP001_performance_claim.md",
+    "documents/emails/email_SUP005_invoice_clarification.md",
+    "documents/quality/quality_report_SUP005_QR-010.md",
+    "documents/quality/quality_report_SUP001_QR-012.md",
+    "documents/management/management_report_Q3_procurement_review.md",
+    "documents/management/management_report_H1_supplier_reliability.md"
+  ],
+  "pdf_documents": [
+    "documents/pdf/cert_SUP004_iso9001.pdf",
+    "documents/pdf/cert_SUP002_iso9001.pdf",
+    "documents/pdf/scar_SUP005_corrective_action.pdf",
+    "documents/pdf/policy_asteron_procurement_2025.pdf",
+    "documents/pdf/review_annual_supplier_performance_fy25_26.pdf"
+  ],
+  "evaluation_files": [
+    "evaluation/decision_scenarios.json",
+    "evaluation/ground_truth_anomalies.json"
+  ],
+  "document_ids": [
+    "DOC-MD-001",
+    "DOC-MD-002",
+    "DOC-MD-003",
+    "DOC-MD-004",
+    "DOC-MD-005",
+    "DOC-MD-006",
+    "DOC-MD-007",
+    "DOC-MD-008",
+    "DOC-MD-009",
+    "DOC-MD-010",
+    "DOC-MD-011",
+    "DOC-MD-012",
+    "DOC-PDF-001",
+    "DOC-PDF-002",
+    "DOC-PDF-003",
+    "DOC-PDF-004",
+    "DOC-PDF-005"
+  ],
+  "anomaly_ids": [
+    "ANM-01",
+    "ANM-02",
+    "ANM-03",
+    "ANM-04",
+    "ANM-05",
+    "ANM-06",
+    "ANM-07",
+    "ANM-08",
+    "ANM-09",
+    "ANM-10",
+    "ANM-11",
+    "ANM-12"
+  ]
+}
